@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color:white;
+  font-size: 60px;
+  padding:120px 0 120px 0;
+}
+
+h2{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color:white;
+  font-size: 50px;
+  padding: 60px 0 60px 0;
+  text-transform: uppercase;
+}
+
+p{
+  font-family: 'Montserrat', sans-serif;
+  color:white;
+  font-size:20pt;
+  font-weight: 400;
+  padding-bottom:60px;
+}
+
+body {
+  background-color: #171717;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  padding: 80px 120px;
+}
+
+button {
+  background: none;
+  border: none;
+  align-content: center;
+  height: 60px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  color:white;
+  border-radius: 11px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding:10px 40px 10px 40px;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: white;
+  color:#171717;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.main_button {
+  border: 1px solid white;
+}
+
+.contact_button{
+  padding: 60px 0 60px 0;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  gap: 55px;                
+}
+
+.first_paragraph{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.first_paragraph_text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card{
+  padding: 30px;
+  border-radius: 11px;
+  background-color: #272727;
+  width:50%;
+  height:150px;
+}
+
+.cards{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  
+}
+
+.cardholder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+#price-list{
+  padding: 30px;
+  border-radius: 11px;
+  background-color: #272727;
+}
+
+.price-item {
+  display: flex;
+  align-items: center; /* чтобы текст и линия были на одной линии */
+}
+
+.name {
+  white-space: nowrap;   /* чтобы текст не переносился */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  color:white;
+
+}
+
+.dots {
+  flex: 1;                              /* занимает всё свободное пространство */
+  border-bottom: 5px dotted #999;    /* пунктирная линия */
+  height: 0;                            /* высоту обнуляем, видна только граница */
+  margin: 0 8px;                        /* отступы от текста */
+}
+
