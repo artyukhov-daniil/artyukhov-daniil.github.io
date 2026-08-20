@@ -7,7 +7,7 @@
 }
 
 img {
-  max-width: 100%;
+  max-width: 40%;
   height: auto;
 }
 
@@ -105,9 +105,9 @@ button:active {
 
 .first_paragraph{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  text-align: center;
+  text-align: left;
 }
 
 .first_paragraph_text{
@@ -123,9 +123,9 @@ button:active {
   border-radius: 11px;
   background-color: #272727;
   width: 100%;           /* на мобильных – на всю ширину */
-  max-width: 400px;      /* но не шире, чем нужно */
+  max-width: 600px;      /* но не шире, чем нужно */
   height: auto;          /* высота по содержимому */
-  min-height: 150px;     /* если нужна минимальная высота */
+  min-height: 200px;     /* если нужна минимальная высота */
 
 }
 
