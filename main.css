@@ -3,6 +3,12 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 html {
@@ -13,25 +19,25 @@ h1{
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color:white;
-  font-size: 60px;
-  padding:120px 0 120px 0;
+  font-size: clamp(2rem, 10vw, 60px);
+  padding: 60px 0;
 }
 
 h2{
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color:white;
-  font-size: 50px;
-  padding: 60px 0 60px 0;
+  font-size: clamp(1.8rem, 6vw, 50px);
+  padding: 40px 0;
   text-transform: uppercase;
 }
 
 p{
   font-family: 'Montserrat', sans-serif;
   color:white;
-  font-size:20pt;
+  font-size: clamp(1rem, 2.5vw, 20pt);
+  padding-bottom: 30px;
   font-weight: 400;
-  padding-bottom:60px;
 }
 
 body {
@@ -42,7 +48,7 @@ body {
   align-items: center;
   margin: 0;
   height: 100vh;
-  padding: 80px 120px;
+  padding: 40px 20px;
 }
 
 button {
@@ -57,6 +63,7 @@ button {
   cursor: pointer;
   transition: 0.3s;
   padding:10px 40px 10px 40px;
+  white-space: nowrap;
 }
 
 button:hover {
@@ -83,33 +90,49 @@ button:active {
 .menu {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
   padding: 20px;
-  gap: 55px;                
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.menu button {
+  font-size: clamp(0.9rem, 3vw, 30px);
+  padding: 8px 16px;
+  height: auto;
 }
 
 .first_paragraph{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .first_paragraph_text{
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 500px; /* чтобы не растягивалась слишком сильно */
 }
 
 .card{
   padding: 30px;
   border-radius: 11px;
   background-color: #272727;
-  width:50%;
-  height:150px;
+  width: 100%;           /* на мобильных – на всю ширину */
+  max-width: 400px;      /* но не шире, чем нужно */
+  height: auto;          /* высота по содержимому */
+  min-height: 150px;     /* если нужна минимальная высота */
+
 }
 
 .cards{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   flex-direction: row;
   align-items: center;
   gap: 30px;
@@ -132,20 +155,108 @@ button:active {
 .price-item {
   display: flex;
   align-items: center; /* чтобы текст и линия были на одной линии */
+  padding-bottom:30px;
 }
 
 .name {
   white-space: nowrap;   /* чтобы текст не переносился */
   font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
+  font-size: clamp(1rem, 3vw, 30px);
   color:white;
-
 }
 
 .dots {
   flex: 1;                              /* занимает всё свободное пространство */
   border-bottom: 5px dotted #999;    /* пунктирная линия */
+  border-bottom-width: 3px; /* чуть тоньше на мобильных */
   height: 0;                            /* высоту обнуляем, видна только граница */
   margin: 0 8px;                        /* отступы от текста */
 }
 
+
+/* Планшеты и маленькие ноутбуки */
+@media (max-width: 1024px) {
+  body {
+    padding: 30px 40px;
+  }
+  .menu {
+    gap: 30px;
+  }
+}
+
+/* Телефоны (портрет) */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    padding: 40px 0;
+  }
+  h2 {
+    font-size: 1.6rem;
+    padding: 30px 0;
+  }
+  p {
+    font-size: 1rem;
+    padding-bottom: 20px;
+  }
+
+  .menu {
+    flex-direction: column;    /* вертикальное меню */
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1.1rem;
+  }
+
+  .first_paragraph {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+  }
+
+  .cards {
+    flex-direction: column;   /* карточки друг под другом */
+    gap: 20px;
+  }
+
+  .price-item {
+    flex-wrap: wrap;          /* чтобы название и цена не прилипали */
+  }
+
+  .name {
+    font-size: 1rem;
+  }
+  .dots {
+    border-bottom-width: 2px;
+  }
+
+  .contact_button {
+    padding: 30px 0;
+  }
+}
+
+/* Очень маленькие экраны (до 480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  .menu button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
